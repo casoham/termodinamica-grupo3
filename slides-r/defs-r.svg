@@ -1,7 +1,7 @@
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
 <defs>
   <!-- trazo de tinta: ligero temblor de pincel -->
-  <filter id="tinta" x="-4%" y="-4%" width="108%" height="108%" color-interpolation-filters="sRGB">
+  <filter id="tinta" filterUnits="userSpaceOnUse" x="-3000" y="-3000" width="9000" height="9000" color-interpolation-filters="sRGB">
     <feTurbulence type="fractalNoise" baseFrequency=".03" numOctaves="2" seed="7" result="n"/>
     <feDisplacementMap in="SourceGraphic" in2="n" scale="3.4" xChannelSelector="R" yChannelSelector="G"/>
   </filter>

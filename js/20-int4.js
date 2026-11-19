@@ -40,7 +40,7 @@
   function cascada(g, t, dt, S) {
     const { cx, top, fw, suelo } = L; const W = S.W || L.W;
     const pool = S.pool, h0 = 350, k = Math.max(0.06, (pool - top) / h0);
-    const ang = (S.ang = (S.ang || 0) + (S.omega ?? 1.5) * dt);
+    const ang = (S.ang = (S.ang || 0) - (S.omega ?? 1.5) * dt); // antihorario: el agua cae sobre el lado izquierdo y lo empuja hacia abajo
     // río de arriba
     g.fillStyle = 'rgba(31,74,120,.16)'; g.fillRect(0, top - 16, cx, 16);
     g.strokeStyle = C.azul; g.lineWidth = 1.6; g.beginPath();
@@ -158,7 +158,7 @@
 
   // ===== Diapositiva 3: cascada sola =====
   escena('i4-cascada', 'i4-cv1', (g, t, dt, S, W, H) => {
-    g.save(); g.translate(0, 0); g.scale(1.1, 1.1); S.W = 1527; S.pool = 500; S.noria = false; cascada(g, t, dt, S); g.restore();
+    g.save(); g.translate(0, 0); g.scale(1.1, 1.1); S.W = 1527; S.pool = 470; S.noria = true; S.omega = 1.6; cascada(g, t, dt, S); g.restore();
   }, { estado: () => ({}) });
 
   // ===== Diapositiva 4: cascada y noria + máquina térmica; etiquetas una a una (clic o cada ~2 s) =====
@@ -252,10 +252,10 @@
   escena('i4-rio', 'i4-cv4', (g, t, dt, S) => {
     const h0 = 470 - L.top;
     let pool = 470;
-    if (t > 4) { const u = Math.min(1, (t - 4) / 12); const e = u * u * (3 - 2 * u); pool = 470 + (L.top + 34 - 470) * e; }
+    if (t > 1) { const u = Math.min(1, (t - 1) / 12); const e = u * u * (3 - 2 * u); pool = 470 + (L.top + 34 - 470) * e; }
     S.pool = pool; S.noria = true; S.omega = 1.6 * Math.max(0.04, (pool - L.top) / h0);
     g.save(); g.translate(430, 20); g.scale(1.05, 1.05); cascada(g, t, dt, S); g.restore();
-  }, { estado: () => ({ pool: 470, ang: 0 }), tEstatico: 17 });
+  }, { estado: () => ({ pool: 470, ang: 0 }), tEstatico: 14 });
 
   // ===== Diapositiva (integrante 5): cascada con la misma escena =====
   escena('i5-cascada', 'i5-cv', (g, t, dt, S) => { g.save(); g.translate(40, 0); g.scale(0.88, 0.88); S.pool = 470; S.noria = true; S.omega = 1.6; cascada(g, t, dt, S); g.restore(); }, { estado: () => ({}) });
