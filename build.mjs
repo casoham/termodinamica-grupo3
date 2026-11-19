@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const raiz = path.dirname(fileURLToPath(import.meta.url));
-const TEMA = process.argv.includes('--tema=rediseno') ? 'rediseno' : '';
+const TEMA = process.argv.includes('--tema=original') ? '' : 'rediseno';
 const R = (...p) => path.join(raiz, ...p);
 const leer = (f) => fs.readFileSync(R(f), 'utf8');
 const b64 = (f) => fs.readFileSync(R(f)).toString('base64');
@@ -88,5 +88,5 @@ ${leer('js/engine.js')}
 </body>
 </html>
 `;
-fs.writeFileSync(TEMA ? R('rediseno', 'index.html') : R('index.html'), pagina);
+fs.writeFileSync(R('index.html'), pagina);
 console.log(`ok · ${(pagina.match(/<section /g) || []).length} diapositivas · ${(pagina.length / 1e6).toFixed(2)} MB`);
