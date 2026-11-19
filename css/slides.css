@@ -183,3 +183,7 @@ table.ed{font-size:36px} table.ed td{padding:32px 30px 32px 0} table.ed th{font-
 .etapa{display:block;left:880px;right:0;top:0;text-align:left;font-size:36px;white-space:nowrap}
 .etapa.r{color:var(--rojo)} .etapa.a{color:var(--azul)} .etapa.n{color:var(--grafito)}
 .etapa sub{font-size:.62em}
+
+.et-r{position:absolute;font:600 32px/1.2 var(--serif);background:var(--papel);padding:2px 8px}
+.animando .fig-c{opacity:.2}
+#i5-eq .eq,#i5-balance-eq .eq,#i5-eta .eq{text-align:center;width:100%;display:block}

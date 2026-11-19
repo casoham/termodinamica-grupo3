@@ -16,7 +16,7 @@ html,body{margin:0;height:100%;background:#000;overflow:hidden;color:var(--tinta
 
 /* ============ 2. DIAPOSITIVA ============ */
 section{position:absolute;inset:0;background:var(--papel);display:flex;flex-direction:column;
-  padding:96px 120px 118px;opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility 0s .45s;overflow:hidden}
+  padding:96px 120px 84px;opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility 0s .45s;overflow:hidden}
 section.activa{opacity:1;visibility:visible;transition:opacity .45s var(--ease)}
 section:not(.activa) *{animation-play-state:paused!important}
 aside{display:none}
@@ -31,7 +31,7 @@ aside{display:none}
 .et{font:500 28px/1.2 var(--sans)}
 .et.p{font-size:28px}
 .mono{font-family:var(--mono)}
-.fuente{position:absolute;left:120px;right:120px;bottom:76px;font:400 18px/1.3 var(--sans);color:var(--grafito)}
+.fuente{position:absolute;left:120px;right:120px;bottom:48px;font:400 18px/1.3 var(--sans);color:var(--grafito)}
 .fig-cap{font:400 22px/1.3 var(--sans);color:var(--grafito);margin:12px 0 0}
 .fig-cap b{font-family:var(--mono);font-weight:500;color:var(--tinta);margin-right:.4em}
 .folio{position:absolute;left:120px;right:120px;bottom:40px;display:flex;justify-content:space-between;

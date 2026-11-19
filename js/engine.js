@@ -62,14 +62,6 @@ window.Q = Object.assign(window.Q || {}, { vida: (window.Q && window.Q.vida) || 
     cuad.appendChild(b);
   });
 
-  // Folio automático
-  dia.forEach((d, i) => {
-    const f = document.createElement('div');
-    f.className = 'folio';
-    f.innerHTML = `<span>Q · Leyes de la termodinámica y ciclos de Carnot</span><span>${d.dataset.int || ''}</span><span>p. ${String(i + 1).padStart(2, '0')}</span>`;
-    if (!d.hasAttribute('data-sin-folio')) d.appendChild(f);
-  });
-
   addEventListener('keydown', (e) => {
     if (e.altKey || e.ctrlKey || e.metaKey) return;
     const k = e.key;

@@ -258,7 +258,7 @@
   }, { estado: () => ({ pool: 470, ang: 0 }), tEstatico: 14 });
 
   // ===== Diapositiva (integrante 5): cascada con la misma escena =====
-  escena('i5-cascada', 'i5-cv', (g, t, dt, S) => { g.save(); g.translate(40, 0); g.scale(0.88, 0.88); S.pool = 470; S.noria = true; S.omega = 1.6; cascada(g, t, dt, S); g.restore(); }, { estado: () => ({}) });
+  escena('i5-cascada', 'i5-cv', (g, t, dt, S) => { g.save(); g.translate(0, 10); g.scale(0.9, 0.9); S.W = 1666; S.pool = 470; S.noria = true; S.omega = 1.6; cascada(g, t, dt, S); g.restore(); }, { estado: () => ({}) });
 
   // ===== Apertura animada: zoom al observador y fundido al retrato (pasos de la diapositiva) =====
   // (el movimiento lo hace el CSS; aquí solo se pausa/reanuda el bucle de la escena con la propia sección)
