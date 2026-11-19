@@ -1,0 +1,65 @@
+<!-- ============ INTEGRANTE 5 · § 03 EFICIENCIA ============ -->
+<section id="i5-div" class="div" data-int="Integrante 5">
+<p class="k">§ 03 · Eficiencia</p>
+<div class="num ent" style="--i:0">03</div>
+<div class="fg"><svg class="refri dibuja" viewBox="0 0 480 560" width="560" height="653" style="--hl-evap:var(--azul);--hl-comp:var(--ocre)"><use href="#refri-corte"/></svg></div>
+<div class="txt ent" style="--i:2"><h2>Eficiencia</h2><p>Integrante 5</p></div>
+<aside>Divisoria del integrante 5.</aside>
+</section>
+
+<section id="i5-cascada" data-int="Integrante 5">
+<p class="k">§ 03 · Eficiencia</p>
+<h2 class="t">¿Cuánto mide nuestra cascada?</h2>
+<p class="sub">Mismas temperaturas, mismo límite reversible</p>
+<div class="c" style="margin-top:16px;display:flex;gap:56px">
+  <div style="position:relative;width:880px;height:600px;flex:none">
+    <canvas id="i5-cv" data-w="880" data-h="600" style="display:block;width:880px;height:600px"></canvas>
+    <div class="et" style="position:absolute;left:0;top:2px;color:var(--rojo)">Fuente caliente · 600 K</div>
+    <div class="et" style="position:absolute;left:0;bottom:2px;color:var(--azul)">Receptor frío · 300 K</div>
+    <div class="et" style="position:absolute;right:20px;top:300px;color:var(--ocre)">Trabajo →</div>
+  </div>
+  <div class="panel-eta ent" style="--i:2">
+    <div class="eq" style="font-size:96px"><math display="block"><msub><mi>η</mi><mtext>máx</mtext></msub><mo>=</mo><mn>1</mn><mo>−</mo><mfrac><msub><mi>T</mi><mi>f</mi></msub><msub><mi>T</mi><mi>c</mi></msub></mfrac></math></div>
+    <p class="et graf" style="margin:6px 0 0">Temperaturas en kelvin</p>
+    <p class="cien">50 %</p>
+  </div>
+</div>
+<p class="fuente">Carnot (1824), analogía de la cascada, p. 16 · MIT, §3.3</p>
+<aside>Con T_c = 600 K y T_f = 300 K: η_máx = 1 − 300/600 = 50 %. Las temperaturas se usan siempre en kelvin.</aside>
+</section>
+
+<section id="i5-area" data-int="Integrante 5">
+<p class="k">§ 03 · Eficiencia</p>
+<h2 class="t">El área del ciclo es trabajo neto</h2>
+<div class="c" style="margin-top:10px;display:flex;flex-direction:column;justify-content:space-between">
+  <div style="display:flex;gap:50px;justify-content:space-between">
+    <figure style="margin:0" class="ent" data-i="1"><div data-fig="pv" data-w="780" data-h="480"></div><figcaption class="fig-cap"><b>Fig. 3</b>— Diagrama P–V</figcaption></figure>
+    <figure style="margin:0" class="ent" data-i="2"><div data-fig="ts" data-w="780" data-h="480"></div><figcaption class="fig-cap"><b>Fig. 4</b>— Diagrama T–S</figcaption></figure>
+  </div>
+  <div class="eqs ent" style="--i:3">
+    <span class="eq" style="font-size:54px"><math><mi>Δ</mi><msub><mi>U</mi><mtext>ciclo</mtext></msub><mo>=</mo><mn>0</mn></math></span>
+    <span class="eq" style="font-size:54px"><math><msub><mi>W</mi><mtext>neto</mtext></msub><mo>=</mo><msub><mi>Q</mi><mi>c</mi></msub><mo>−</mo><msub><mi>Q</mi><mi>f</mi></msub></math></span>
+  </div>
+</div>
+<p class="fuente">MIT · Thermodynamics and Propulsion · §3.3</p>
+<aside>En un ciclo completo el sistema vuelve a su estado inicial: ΔU = 0. Por eso el trabajo neto es la diferencia entre el calor que entra y el que sale. En el diagrama P–V y en el T–S, el área encerrada representa ese trabajo.</aside>
+</section>
+
+<section id="i5-balance" data-int="Integrante 5" data-pasos="1">
+<p class="k">§ 03 · Eficiencia</p>
+<h2 class="t">Con 600 K y 300 K, la mitad es trabajo</h2>
+<div class="c" style="display:flex;flex-direction:column;justify-content:center;gap:34px;padding-bottom:40px">
+  <p class="et" style="margin:0;font-size:34px">100 J de calor</p>
+  <div class="balance" id="i5-bal">
+    <div class="bw" style="background:var(--ocre);color:#fff;width:100%"><span></span></div>
+    <div class="bq" style="background:var(--azul);color:#fff;width:0"><span></span></div>
+  </div>
+  <div class="leyenda" data-p="1">
+    <div><i style="background:var(--ocre)"></i>50 J de trabajo</div>
+    <div><i style="background:var(--azul)"></i>50 J al receptor frío</div>
+  </div>
+  <p class="eq" data-p="1" style="font-size:64px;margin:14px 0 0"><math><msub><mi>W</mi><mtext>neto</mtext></msub><mo>=</mo><msub><mi>Q</mi><mi>c</mi></msub><mo>−</mo><msub><mi>Q</mi><mi>f</mi></msub><mo>=</mo><mn>100</mn><mo>−</mo><mn>50</mn><mo>=</mo><mn>50</mn><mtext>&#160;J</mtext></math></p>
+</div>
+<p class="fuente">Ejemplo ideal: 600 K / 300 K · MIT · Thermodynamics and Propulsion · §3.3</p>
+<aside>Con 100 J de calor entregados por el foco caliente, el ciclo ideal convierte 50 J en trabajo y entrega 50 J al receptor frío. Eso es η = 50 %.</aside>
+</section>

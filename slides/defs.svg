@@ -1,0 +1,95 @@
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<!-- ===== REFRI · vista frontal cerrada (se dibuja una sola vez) ===== -->
+<symbol id="refri-cerrada" viewBox="0 0 300 520">
+  <rect class="rel" x="30" y="12" width="240" height="478" rx="20" pathLength="1"/>
+  <line class="lin" x1="30" y1="170" x2="270" y2="170" pathLength="1"/>
+  <line class="lin" x1="58" y1="66" x2="58" y2="132" pathLength="1"/>
+  <line class="lin" x1="58" y1="212" x2="58" y2="322" pathLength="1"/>
+  <line class="lin" x1="62" y1="490" x2="62" y2="508" pathLength="1"/>
+  <line class="lin" x1="238" y1="490" x2="238" y2="508" pathLength="1"/>
+  <line class="lin fino" x1="140" y1="40" x2="240" y2="40" pathLength="1"/>
+</symbol>
+<!-- ===== REFRI · vista frontal con la puerta entreabierta ===== -->
+<symbol id="refri-abierta" viewBox="-110 0 410 520">
+  <rect class="rel" x="30" y="12" width="240" height="478" rx="20" pathLength="1"/>
+  <rect class="rel" x="48" y="30" width="204" height="442" rx="8" pathLength="1" style="fill:var(--papel)"/>
+  <line class="lin fino" x1="48" y1="170" x2="252" y2="170" pathLength="1"/>
+  <line class="lin fino" x1="48" y1="260" x2="252" y2="260" pathLength="1"/>
+  <line class="lin fino" x1="48" y1="350" x2="252" y2="350" pathLength="1"/>
+  <rect class="rel fino" x="70" y="206" width="52" height="54" rx="4" pathLength="1"/>
+  <rect class="rel fino" x="150" y="224" width="70" height="36" rx="4" pathLength="1"/>
+  <rect class="rel fino" x="80" y="296" width="80" height="54" rx="4" pathLength="1"/>
+  <polygon class="rel" points="30,12 -96,48 -96,456 30,490" pathLength="1"/>
+  <line class="lin" x1="-70" y1="110" x2="-70" y2="190" pathLength="1"/>
+  <line class="lin" x1="-70" y1="250" x2="-70" y2="360" pathLength="1"/>
+  <line class="lin fino" x1="-96" y1="170" x2="30" y2="170" pathLength="1" style="display:none"/>
+</symbol>
+<!-- ===== REFRI · corte lateral (puerta a la derecha, serpentín atrás) ===== -->
+<symbol id="refri-corte" viewBox="0 0 480 560">
+  <!-- gabinete -->
+  <rect class="rel" x="50" y="20" width="370" height="500" rx="22" pathLength="1"/>
+  <rect class="rel" x="76" y="46" width="318" height="400" rx="6" pathLength="1" style="fill:var(--papel)"/>
+  <!-- puerta -->
+  <rect class="rel" x="420" y="20" width="34" height="500" rx="10" pathLength="1"/>
+  <line class="lin fino" x1="394" y1="120" x2="420" y2="120" pathLength="1"/>
+  <line class="lin fino" x1="394" y1="260" x2="420" y2="260" pathLength="1"/>
+  <line class="lin fino" x1="394" y1="380" x2="420" y2="380" pathLength="1"/>
+  <!-- congelador y repisas -->
+  <line class="lin fino" x1="76" y1="170" x2="394" y2="170" pathLength="1"/>
+  <line class="lin fino" x1="76" y1="270" x2="380" y2="270" pathLength="1"/>
+  <line class="lin fino" x1="76" y1="362" x2="380" y2="362" pathLength="1"/>
+  <!-- comida -->
+  <rect class="rel fino" x="130" y="212" width="70" height="58" rx="5" pathLength="1"/>
+  <rect class="rel fino" x="218" y="228" width="56" height="42" rx="5" pathLength="1"/>
+  <rect class="rel fino" x="150" y="304" width="96" height="58" rx="5" pathLength="1"/>
+  <!-- evaporador (dentro del congelador) -->
+  <path class="lin g-evap" style="stroke:var(--hl-evap,var(--tinta))" d="M92 70 H150 V92 H100 V114 H150 V136 H100 V158" pathLength="1"/>
+  <!-- serpentín del condensador (detrás) -->
+  <path class="lin g-serp" style="stroke:var(--hl-serp,var(--tinta))" d="M34 64 H18 V104 H34 V144 H18 V184 H34 V224 H18 V264 H34 V304 H18 V344 H34 V384 H18 V424" pathLength="1"/>
+  <!-- compresor -->
+  <rect class="rel g-comp" style="stroke:var(--hl-comp,var(--tinta))" x="86" y="456" width="120" height="52" rx="10" pathLength="1"/>
+  <circle class="lin g-comp" style="stroke:var(--hl-comp,var(--tinta))" cx="146" cy="482" r="14" pathLength="1"/>
+  <path class="lin fino" d="M206 482 H300 M300 482 V300" pathLength="1" style="display:none"/>
+</symbol>
+<!-- ===== LATA DE ALUMINIO ===== -->
+<symbol id="lata" viewBox="0 0 120 210">
+  <path class="rel" d="M20 36 Q20 24 34 22 H86 Q100 24 100 36 V190 Q100 202 86 204 H34 Q20 202 20 190 Z" pathLength="1"/>
+  <ellipse class="rel" cx="60" cy="24" rx="40" ry="8" pathLength="1"/>
+  <line class="lin fino" x1="20" y1="64" x2="100" y2="64" pathLength="1"/>
+  <line class="lin fino" x1="20" y1="170" x2="100" y2="170" pathLength="1"/>
+  <line class="lin fino" x1="50" y1="24" x2="70" y2="24" pathLength="1"/>
+  <rect x="20" y="104" width="80" height="26" fill="var(--tinta)"/>
+</symbol>
+<!-- ===== RECIPIENTE PLÁSTICO ===== -->
+<symbol id="recipiente" viewBox="0 0 200 170">
+  <path class="rel" d="M20 52 H180 L166 152 Q164 162 154 162 H46 Q36 162 34 152 Z" pathLength="1"/>
+  <rect class="rel" x="14" y="32" width="172" height="22" rx="6" pathLength="1"/>
+  <line class="lin fino" x1="26" y1="76" x2="174" y2="76" pathLength="1"/>
+  <rect x="30" y="100" width="140" height="26" fill="var(--tinta)"/>
+</symbol>
+<!-- ===== TERMÓMETRO INFRARROJO ===== -->
+<symbol id="ir" viewBox="0 0 220 150">
+  <path class="rel" d="M10 40 H150 Q176 40 176 62 V82 H122 L112 140 H80 L88 82 H10 Z" pathLength="1"/>
+  <rect class="rel" x="150" y="48" width="34" height="26" rx="4" pathLength="1"/>
+  <circle class="lin fino" cx="40" cy="61" r="9" pathLength="1"/>
+</symbol>
+<!-- ===== MANO esquemática (palma abierta) ===== -->
+<symbol id="mano" viewBox="0 0 160 200">
+  <rect class="rel" x="20" y="90" width="110" height="100" rx="26" pathLength="1"/>
+  <rect class="rel" x="24" y="20" width="22" height="90" rx="11" pathLength="1"/>
+  <rect class="rel" x="52" y="6" width="22" height="104" rx="11" pathLength="1"/>
+  <rect class="rel" x="80" y="12" width="22" height="98" rx="11" pathLength="1"/>
+  <rect class="rel" x="108" y="30" width="22" height="80" rx="11" pathLength="1"/>
+  <rect class="rel" x="128" y="96" width="26" height="62" rx="13" pathLength="1" style="transform:rotate(-28deg);transform-origin:128px 120px"/>
+</symbol>
+<!-- ===== Punta de flecha ===== -->
+<marker id="pf-rojo" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M1 1 L8 5 L1 9 Z" fill="var(--rojo)"/></marker>
+<marker id="pf-azul" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M1 1 L8 5 L1 9 Z" fill="var(--azul)"/></marker>
+<marker id="pf-ocre" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M1 1 L8 5 L1 9 Z" fill="var(--ocre)"/></marker>
+<marker id="pf-tinta" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M1 1 L8 5 L1 9 Z" fill="var(--tinta)"/></marker>
+<linearGradient id="mapa-termico" x1="1" y1="0" x2="0" y2="0">
+  <stop offset="0" stop-color="#B3261E" stop-opacity=".55"/><stop offset=".5" stop-color="#C9A58C" stop-opacity=".25"/><stop offset="1" stop-color="#1F4A78" stop-opacity=".5"/>
+</linearGradient>
+</defs>
+</svg>

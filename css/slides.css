@@ -1,0 +1,185 @@
+/* ============ SLIDES: reglas específicas por diapositiva ============ */
+
+/* --- Portada --- */
+#portada{padding:0}
+.por-q{position:absolute;left:110px;top:150px;font:600 560px/1 var(--serif);color:var(--rojo);letter-spacing:-.04em;font-variation-settings:'opsz' 72}
+.por-masthead{position:absolute;left:120px;top:760px;font:500 22px/1.7 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--grafito)}
+.por-masthead span{display:block}
+.por-masthead span:first-child{color:var(--tinta)}
+.por-fig{position:absolute;left:490px;top:70px}
+.por-txt{position:absolute;left:820px;right:120px;top:190px}
+.por-txt .k{border:0;padding:0;margin:0 0 26px;font-size:18px}
+.por-txt h1{font:600 92px/1.02 var(--serif);margin:0;letter-spacing:-.01em;font-variation-settings:'opsz' 72}
+.por-lista{list-style:none;margin:34px 0 0;padding:26px 0 0;border-top:1px solid var(--filete);columns:2;column-gap:40px;font:400 28px/1.45 var(--sans)}
+#portada .sub{font-size:34px}
+#portada .folio{display:none}
+
+/* --- Integrante 1 --- */
+.cero{position:absolute;left:30px;top:-6px;font:600 270px/1 var(--serif);color:var(--rojo);z-index:2;letter-spacing:-.04em}
+#i1-historia .cadena{position:absolute;top:330px;left:0;right:0}
+#i1-historia .pie-i{position:absolute;left:0;right:0;top:600px;font:italic 400 36px/1.3 var(--serif);color:var(--grafito);max-width:1260px;margin:0}
+#cadena .chv{transition:left .9s var(--ease),opacity .5s,transform .5s}
+.p6 #cadena .fow{--s:0}
+.p6 #cadena .carnot{--s:1}.p6 #cadena .mayer{--s:2}.p6 #cadena .clau{--s:3}.p6 #cadena .nern{--s:4}
+#cadena .fow>div{clip-path:polygon(0 0,calc(100% - 46px) 0,100% 50%,calc(100% - 46px) 100%,0 100%,46px 50%)}
+.p6 #cadena .fow>div{clip-path:polygon(0 0,calc(100% - 46px) 0,100% 50%,calc(100% - 46px) 100%,0 100%,0 50%)}
+.p6 #cadena .carnot>div{clip-path:polygon(0 0,calc(100% - 46px) 0,100% 50%,calc(100% - 46px) 100%,0 100%,46px 50%)}
+.guia circle{stroke:none}
+.big{font:italic 400 104px/1.1 var(--serif);margin:0;letter-spacing:-.005em;font-variation-settings:'opsz' 72;max-width:1500px}
+#i1-accion .c{display:flex;flex-direction:column;justify-content:space-between;padding-bottom:20px}
+#i1-accion .big{margin-top:40px}
+.cadena-s{display:flex;gap:0;height:190px}
+.chs{flex:1;position:relative}
+.chs>div{position:absolute;inset:0 0 0 0;background:var(--filete);clip-path:polygon(0 0,calc(100% - 40px) 0,100% 50%,calc(100% - 40px) 100%,0 100%,40px 50%);display:flex;flex-direction:column;justify-content:center;padding:0 70px 0 80px;margin-left:-12px}
+.chs:first-child>div{margin-left:0;clip-path:polygon(0 0,calc(100% - 40px) 0,100% 50%,calc(100% - 40px) 100%,0 100%,0 50%)}
+.chs b{font:500 22px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--grafito)}
+.chs.hit{flex:2.4}.chs.hit>div{background:var(--tinta);color:var(--papel)}.chs.hit b{color:#fff}
+.chs span{font:400 28px/1.25 var(--sans);margin-top:8px}
+.matiz-t{position:absolute;right:0;top:40px;width:900px}
+.matiz-t .et{display:none}
+
+/* Equilibrio: bucle lento */
+.loop .flujos line{animation:flujo 9s ease-in-out infinite}
+.loop .bloqA{animation:tA 9s ease-in-out infinite}
+.loop .bloqB{animation:tB 9s ease-in-out infinite}
+@keyframes flujo{0%{transform:scaleX(1);opacity:1}70%{transform:scaleX(.02);opacity:.2}85%,100%{transform:scaleX(.02);opacity:0}}
+@keyframes tA{0%{fill:#E6C9C0}70%,100%{fill:#E4D7D0}}
+@keyframes tB{0%{fill:#C5D0DC}70%,100%{fill:#D4D6D8}}
+
+/* --- Integrante 2 --- */
+.preg{border-left:8px solid var(--rojo);padding:20px 0 20px 50px;margin-top:40px;max-width:1500px}
+.k2{font:500 20px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--rojo);margin:0 0 20px}
+.big2{font:italic 400 90px/1.12 var(--serif);margin:0}
+.defs{display:flex;gap:70px;margin-top:20px}
+.defs div{flex:1;border-top:2px solid var(--tinta);padding-top:20px}
+.defs b{display:block;font:500 56px/1 var(--mate);margin-bottom:12px}
+.defs span{font:400 32px/1.25 var(--serif)}
+.datos{display:flex;gap:80px}
+.d1{display:flex;align-items:baseline;gap:22px}
+.d1 .n{font:600 78px/1 var(--serif)}
+#i2-reto .op b{font-size:26px}
+#i2-reto.p1 #i2-opC{background:var(--tinta);color:var(--papel)}
+.preg2{font:italic 400 56px/1.2 var(--serif);margin:0 0 34px}
+.resp{font:600 56px/1.15 var(--serif);color:var(--rojo);margin:0 0 30px}
+.puente{font:400 38px/1.3 var(--serif);color:var(--grafito);margin:0;border-top:1px solid var(--filete);padding-top:24px}
+
+/* --- Integrante 3: puntos que viajan por una ruta --- */
+.pt{offset-rotate:0deg;animation:viaja var(--d,3s) linear infinite;animation-delay:var(--dl,0s)}
+@keyframes viaja{0%{offset-distance:0%;opacity:0}10%{opacity:1}90%{opacity:1}100%{offset-distance:100%;opacity:0}}
+.turb{animation:gira 3s linear infinite}
+@keyframes gira{to{transform:rotate(360deg)}}
+.soft{fill:#E1C6BE;opacity:0;animation:sube 3.4s ease-out infinite}
+.soft.s2{animation-delay:-1.1s}.soft.s3{animation-delay:-2.2s}
+@keyframes sube{0%{opacity:0;transform:translateY(24px)}25%{opacity:.9}100%{opacity:0;transform:translateY(-36px)}}
+.geo-p{font:400 32px/1.3 var(--serif);margin:0 0 26px}
+.geo-p b{display:block;font:500 22px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--rojo);margin-bottom:8px}
+.geo-r{font:italic 400 34px/1.3 var(--serif);margin:0;border-top:1px solid var(--filete);padding-top:22px;color:var(--tinta)}
+.mk{opacity:0;transition:opacity .5s}.mk.on{opacity:1}
+
+/* --- Figuras P–V / T–S --- */
+.fig-ax{fill:none;stroke:var(--tinta);stroke-width:3;stroke-linecap:round}
+.fig-c{fill:none;stroke:var(--tinta);stroke-width:5;stroke-linecap:round}
+.fig-c.ad{stroke:var(--tinta);stroke-width:3.5;stroke-dasharray:3 9}
+
+/* --- Integrante 5 --- */
+.panel-eta{flex:1;border-left:1px solid var(--filete);padding-left:56px;display:flex;flex-direction:column;justify-content:center}
+.cien{font:600 230px/1 var(--serif);color:var(--rojo);margin:10px 0 0;letter-spacing:-.03em}
+.eqs{display:flex;justify-content:space-around;border-top:1px solid var(--filete);padding-top:22px}
+.balance div{overflow:hidden;white-space:nowrap;font-size:34px}
+#i5-bal .bw,#i5-bal .bq{transition:width 1s var(--ease)}
+#i5-balance.p1 #i5-bal .bw{width:50%!important}
+#i5-balance.p1 #i5-bal .bq{width:50%!important}
+#i5-balance.p1 #i5-bal .bw span::after{content:""}
+.leyenda{display:flex;gap:80px;font:400 34px var(--sans)}
+.leyenda i{display:inline-block;width:26px;height:26px;margin-right:14px;vertical-align:-3px}
+
+/* --- Integrante 6 --- */
+.panel-c{flex:1;border-left:1px solid var(--filete);padding-left:40px}
+.vill{display:flex;gap:40px}
+.vi{flex:1;border-top:2px solid var(--tinta);padding-top:22px}
+.vi h3{font:600 40px/1.1 var(--serif);margin:14px 0 12px}
+.vi p{font:400 30px/1.3 var(--serif);margin:0 0 16px;color:var(--tinta)}
+.acc{display:inline-block;font:500 20px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--rojo);border:1px solid var(--rojo);padding:8px 14px}
+.rem{text-align:center;margin:34px 0 0}
+.barras{display:flex;flex-direction:column;gap:30px}
+.brow{display:flex;align-items:center;gap:26px}
+.bl{width:230px;font:500 28px var(--sans)}
+.bb{flex:1;height:64px;background:var(--filete)}
+.bb i{display:block;height:100%;transform-origin:left;transition:transform .9s var(--ease)}
+.bv{width:150px;font:600 56px var(--serif)}
+.datos-t{flex:.9;border-left:1px solid var(--filete);padding-left:50px}
+.datos-t p{font:400 34px/1.4 var(--sans);margin:0}
+.datos-t p.k2{font-size:20px}
+.cops{display:flex;gap:60px;align-items:flex-start;margin-top:24px}
+.cop{display:flex;flex-direction:column;max-width:380px}
+.cop .n{font:600 150px/1 var(--serif);color:var(--rojo)}
+.cop .n.graf{color:var(--grafito)}
+.cop .et{font-size:26px;font-weight:400}
+.cop-f{border-left:1px solid var(--filete);padding-left:50px}
+.perillas{display:flex;gap:60px}
+.pe{flex:1;border-top:2px solid var(--tinta);padding-top:20px}
+.pe h3{font:600 40px/1.1 var(--serif);margin:10px 0}
+.pe p{font:400 30px/1.3 var(--serif);margin:0}
+.cadena4{display:flex;height:300px}
+.c4{flex:1;position:relative;margin-left:-12px}
+.c4:first-child{margin-left:0}
+.c4>div{position:absolute;inset:0;background:var(--filete);clip-path:polygon(0 0,calc(100% - 50px) 0,100% 50%,calc(100% - 50px) 100%,0 100%,50px 50%);padding:0 80px 0 90px;display:flex;flex-direction:column;justify-content:center}
+.c4:first-child>div{clip-path:polygon(0 0,calc(100% - 50px) 0,100% 50%,calc(100% - 50px) 100%,0 100%,0 50%);padding-left:50px}
+.c4 b{font:500 24px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--rojo);margin-bottom:14px}
+.c4 span{font:500 32px/1.25 var(--sans)}
+.remate{font:600 48px/1.2 var(--serif);margin:60px 0 0;color:var(--tinta);border-top:1px solid var(--filete);padding-top:34px}
+[data-p].remate{transform:none}
+.refs{margin:0;padding:0 0 0 0;list-style:none;font:400 32px/1.4 var(--serif);counter-reset:r}
+.refs li{padding:0 0 22px 90px;position:relative;text-indent:0}
+.refs li::before{counter-increment:r;content:"[" counter(r) "]";position:absolute;left:0;font:500 22px var(--mono);color:var(--rojo);top:8px}
+
+/* --- Ajustes de escala y centrado --- */
+#i6-tabla .c,#i6-perillas .c,#i6-leyes .c,#i6-refri .c,#i6-villanos .c{display:flex;flex-direction:column;justify-content:center;padding-bottom:30px}
+#i6-central .c{align-items:center;padding-bottom:30px}
+#i5-bal .bw span::before{content:"100 J"} #i5-bal .bq span::before{content:"50 J"}
+#i5-balance.p1 #i5-bal .bw span::before{content:"50 J"}
+.bv{width:200px;white-space:nowrap}
+table.ed{font-size:36px} table.ed td{padding:32px 30px 32px 0} table.ed th{font-size:22px} table.ed td:first-child{font-size:24px;width:340px}
+.pe h3{font-size:50px} .pe p{font-size:36px} .pe svg{width:200px;height:200px}
+.cadena4{height:420px} .c4 span{font-size:40px} .c4 b{font-size:28px}
+.cop .n{font-size:230px} .cop .et{font-size:30px} .cop{max-width:460px}
+.vi h3{font-size:46px} .vi p{font-size:34px}
+.refs{font-size:36px}
+.c{padding-bottom:20px}
+#i5-area .c{padding-bottom:50px}
+
+/* --- Integrante 4: locomotora, zoom y retrato --- */
+.loco-w{position:relative;width:1680px;height:810px;overflow:hidden}
+.escena{position:absolute;left:0;top:50px;width:1680px;height:700px;transform-origin:87% 36%;
+  transition:transform 3.2s cubic-bezier(.55,0,.2,1),opacity 1.2s ease 2.5s}
+#i4-loco.p1 .escena{transform:scale(8);opacity:0}
+.resto{transition:filter 2.4s ease,opacity 2.8s ease}
+#i4-loco.p1 .resto{filter:blur(7px);opacity:.15}
+.loco-t{font:500 26px var(--mono);letter-spacing:.1em;fill:var(--grafito);text-transform:none}
+.retr{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;opacity:0;transition:opacity 1.2s ease 2.6s;pointer-events:none}
+#i4-loco.p1 .retr{opacity:1}
+.marco{border:4px solid var(--tinta);padding:12px;outline:2px solid var(--tinta);outline-offset:-24px;background:var(--papel);margin-top:10px;
+  box-shadow:inset 0 0 0 8px var(--papel)}
+.marco img{display:block;height:620px;width:auto;filter:sepia(.22) contrast(1.02)}
+.retr-t{text-align:center;margin-top:14px}
+.retr-t p{margin:0;font:400 34px/1.3 var(--serif);color:var(--grafito)}
+.retr-t p:first-child{font:600 52px/1.1 var(--serif);color:var(--tinta);margin-bottom:6px}
+.ent-p{opacity:0;transition:opacity .6s var(--ease),transform .6s var(--ease);transform:translateY(10px)}
+.ent-p.on{opacity:1;transform:none}
+.humo{animation:humo 4.8s linear infinite;animation-delay:var(--dl,0s);transform-origin:375px 270px;opacity:0}
+@keyframes humo{0%{transform:translate(0,0) scale(.5);opacity:0}12%{opacity:.9}100%{transform:translate(-90px,-250px) scale(2.6);opacity:0}}
+.vapor{animation:vapor 2.2s linear infinite;animation-delay:var(--dl,0s);opacity:0}
+@keyframes vapor{0%{transform:translate(0,0) scale(.4);opacity:0}20%{opacity:.9}100%{transform:translate(30px,-90px) scale(2);opacity:0}}
+.rueda{animation:gira 2.4s linear infinite}
+.biela{animation:biela 2.4s linear infinite}
+@keyframes biela{0%{transform:translate(40px,0)}12.5%{transform:translate(28px,28px)}25%{transform:translate(0,40px)}37.5%{transform:translate(-28px,28px)}50%{transform:translate(-40px,0)}62.5%{transform:translate(-28px,-28px)}75%{transform:translate(0,-40px)}87.5%{transform:translate(28px,-28px)}100%{transform:translate(40px,0)}}
+.aguja{animation:aguja 3.6s ease-in-out infinite alternate}
+@keyframes aguja{from{transform:rotate(-55deg)}to{transform:rotate(55deg)}}
+.pala{animation:pala 1.3s ease-in-out infinite alternate}
+.obrero.b .pala{animation-delay:-.6s}
+@keyframes pala{from{transform:rotate(-14deg)}to{transform:rotate(22deg)}}
+.valv{animation:gira 5s linear infinite}
+.etapa{position:absolute;left:0;right:0;top:0;margin:0;text-align:center;font:600 40px/1.2 var(--serif);color:var(--tinta);display:none}
+.etapa{display:block;left:880px;right:0;top:0;text-align:left;font-size:36px;white-space:nowrap}
+.etapa.r{color:var(--rojo)} .etapa.a{color:var(--azul)} .etapa.n{color:var(--grafito)}
+.etapa sub{font-size:.62em}

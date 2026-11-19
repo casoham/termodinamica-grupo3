@@ -1,0 +1,12 @@
+node_modules/
+revision/
+final/
+final_hoja*.png
+*.py
+dbg.mjs
+snap.mjs
+snap2.mjs
+todas.mjs
+check.mjs
+teclado.mjs
+package-lock.json

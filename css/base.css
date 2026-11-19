@@ -1,0 +1,167 @@
+/* ============ 1. TOKENS ============ */
+:root{
+  --papel:#F4F1EA; --tinta:#1C1C1A; --grafito:#5E5D58; --filete:#D8D2C4;
+  --rojo:#B3261E;   /* calor: T_c, Q_c, foco caliente */
+  --azul:#1F4A78;   /* frío: T_f, Q_f, foco frío */
+  --ocre:#A8873A;   /* trabajo: W */
+  --serif:'Newsreader',Georgia,serif;
+  --sans:'IBM Plex Sans',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --mate:'STIX Two Math','Newsreader',Georgia,serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#000;overflow:hidden;color:var(--tinta);font-family:var(--serif)}
+#escenario{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:0 0;background:var(--papel)}
+
+/* ============ 2. DIAPOSITIVA ============ */
+section{position:absolute;inset:0;background:var(--papel);display:flex;flex-direction:column;
+  padding:96px 120px 118px;opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility 0s .45s;overflow:hidden}
+section.activa{opacity:1;visibility:visible;transition:opacity .45s var(--ease)}
+section:not(.activa) *{animation-play-state:paused!important}
+aside{display:none}
+.k{font:500 20px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--rojo);
+  padding-bottom:14px;border-bottom:1px solid var(--filete);margin:0 0 26px;flex:none}
+.t{font:600 72px/1.05 var(--serif);margin:0;flex:none;max-width:1560px;letter-spacing:-.005em;font-variation-settings:'opsz' 72}
+.t em,.cuerpo em{font-style:italic}
+.sub{font:italic 400 36px/1.25 var(--serif);color:var(--grafito);margin:12px 0 0;flex:none}
+.c{flex:1;min-height:0;position:relative;margin-top:26px}
+.cuerpo{font:400 36px/1.35 var(--serif);margin:0}
+.rojo{color:var(--rojo)} .azul{color:var(--azul)} .ocre{color:var(--ocre)} .graf{color:var(--grafito)}
+.et{font:500 28px/1.2 var(--sans)}
+.et.p{font-size:28px}
+.mono{font-family:var(--mono)}
+.fuente{position:absolute;left:120px;right:120px;bottom:76px;font:400 18px/1.3 var(--sans);color:var(--grafito)}
+.fig-cap{font:400 22px/1.3 var(--sans);color:var(--grafito);margin:12px 0 0}
+.fig-cap b{font-family:var(--mono);font-weight:500;color:var(--tinta);margin-right:.4em}
+.folio{position:absolute;left:120px;right:120px;bottom:40px;display:flex;justify-content:space-between;
+  font:400 18px/1 var(--mono);color:var(--grafito);border-top:1px solid var(--filete);padding-top:14px}
+.folio span:nth-child(2){text-align:center}
+.folio span:last-child{text-align:right;min-width:150px}
+.ins{position:absolute;right:120px;top:50px;font:500 18px/1 var(--sans);color:var(--grafito);letter-spacing:.04em;display:flex;align-items:center;gap:10px}
+.ins img{height:22px;display:block}
+mark,.pal{color:var(--rojo);background:none}
+
+/* matemática */
+math{font-family:var(--mate);font-size:1.15em}
+.eq{font:400 80px/1.2 var(--mate);color:var(--tinta)}
+.eq math{font-size:1em}
+i.v{font-family:var(--mate);font-style:italic}
+sub{font-size:.62em;line-height:0}
+
+/* ============ 3. REVELADOS Y MOVIMIENTO ============ */
+[data-p]{opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+[data-p].on{opacity:1;transform:none}
+svg [data-p]{transform:none}
+.ent{opacity:0;transform:translateY(16px);animation:ent .6s var(--ease) forwards;animation-delay:calc(var(--i,0)*.12s + .15s);animation-play-state:paused}
+section.activa .ent{animation-play-state:running}
+@keyframes ent{to{opacity:1;transform:none}}
+.fade{opacity:0;animation:fade .6s ease-out forwards;animation-delay:calc(var(--i,0)*.15s + .1s);animation-play-state:paused}
+section.activa .fade{animation-play-state:running}
+@keyframes fade{to{opacity:1}}
+.trazo{stroke-dasharray:1;stroke-dashoffset:1;animation:trazo 1.2s ease-out forwards;animation-delay:calc(var(--i,0)*.18s)}
+@keyframes trazo{to{stroke-dashoffset:0}}
+.dibuja use,.dibuja .tr{stroke-dasharray:1;stroke-dashoffset:1;animation:trazo 1.8s ease-out .2s forwards}
+@media (prefers-reduced-motion:reduce){
+  .ent,.fade{animation:none;opacity:1;transform:none}
+  .trazo,.dibuja use,.dibuja .tr{animation:none;stroke-dashoffset:0}
+  [data-p]{transition:none}
+  .loop,.loop *{animation:none!important}
+}
+
+/* ============ 4. COMPONENTES ============ */
+/* 4.1 Refri (SVG reutilizable en defs) */
+svg.refri{display:block;overflow:visible}
+svg *{vector-effect:none}
+.lin{fill:none;stroke:var(--tinta);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.rel{fill:var(--papel);stroke:var(--tinta);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+.fino{stroke-width:2}
+.tx{font:500 30px var(--sans);fill:var(--tinta)}
+.tx.m{font:500 22px var(--mono)}
+.tx.g{fill:var(--grafito)}
+.f-rojo{fill:var(--rojo)} .f-azul{fill:var(--azul)} .f-ocre{fill:var(--ocre)}
+.s-rojo{stroke:var(--rojo)} .s-azul{stroke:var(--azul)} .s-ocre{stroke:var(--ocre)}
+.flecha{fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.hp{fill:var(--rojo)} .hf{fill:var(--azul)} .ho{fill:var(--ocre)}
+
+/* 4.2 Cadena de chevrones */
+.cadena{position:relative;height:250px}
+.chv{position:absolute;top:0;width:370px;height:230px;transition:left .9s var(--ease),opacity .5s var(--ease),transform .9s var(--ease);
+  left:calc(var(--s)*328px);}
+.chv>div{position:absolute;inset:0;clip-path:polygon(0 0,calc(100% - 46px) 0,100% 50%,calc(100% - 46px) 100%,0 100%,46px 50%);
+  background:var(--filete);display:flex;flex-direction:column;justify-content:center;padding:0 80px 0 86px}
+.chv:first-child>div,.chv.i0>div{clip-path:polygon(0 0,calc(100% - 46px) 0,100% 50%,calc(100% - 46px) 100%,0 100%,0 50%)}
+.chv b{font:500 26px/1 var(--mono);color:var(--rojo);margin-bottom:10px;letter-spacing:.03em}
+.chv span{font:500 28px/1.2 var(--sans)}
+.chv.hit>div{background:var(--tinta)} .chv.hit span{color:var(--papel)} .chv.hit b{color:#fff}
+.chv[data-p]{transform:translateX(30px)} .chv[data-p].on{transform:none}
+
+/* 4.3 Tabla editorial */
+table.ed{border-collapse:collapse;width:100%;font:400 30px/1.3 var(--sans)}
+table.ed th{font:500 20px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--grafito);text-align:left;padding:0 20px 14px 0;border-bottom:2px solid var(--tinta)}
+table.ed td{padding:22px 24px 22px 0;border-bottom:1px solid var(--filete);vertical-align:top}
+table.ed td:first-child{font:500 22px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--grafito);width:300px}
+table.ed tr[data-p]{transform:none}
+table.ed tr[data-p]:not(.on){opacity:0}
+
+/* 4.4 Divisoria */
+.div{padding-top:96px}
+.div .num{position:absolute;left:100px;top:150px;font:600 470px/1 var(--serif);color:var(--rojo);letter-spacing:-.04em;font-variation-settings:'opsz' 72}
+.div .num.s{font-size:420px;top:150px}
+.div .txt{position:absolute;left:120px;bottom:210px;max-width:900px}
+.div .txt h2{font:600 96px/1 var(--serif);margin:0 0 20px}
+.div .txt p{font:italic 400 40px/1.2 var(--serif);color:var(--grafito);margin:0}
+.div .fg{position:absolute;right:170px;top:140px;width:560px}
+.div .k{position:absolute;left:120px;right:120px;top:96px}
+
+/* 4.5 Cita / tesis */
+.cita{position:absolute;left:220px;right:220px;top:50%;transform:translateY(-52%);text-align:left}
+.cita q{display:block;quotes:"«" "»";font:italic 400 64px/1.2 var(--serif);font-variation-settings:'opsz' 72}
+.cita q::before,.cita q::after{color:var(--rojo)}
+.cita .fir{font:500 22px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--grafito);margin-top:44px;display:flex;align-items:center;gap:20px}
+.cita .fir::before{content:"";width:80px;height:1px;background:var(--tinta)}
+
+/* 4.6 Triángulo */
+.tri svg{width:100%;height:100%}
+
+/* 4.7 Tablero de opciones (votación) */
+.ops{display:flex;gap:36px}
+.op{flex:1;border:2px solid var(--tinta);padding:36px 40px;position:relative;background:transparent;transition:background .4s,color .4s,border-color .4s}
+.op b{display:block;font:500 22px var(--mono);letter-spacing:.14em;color:var(--rojo);margin-bottom:14px}
+.op .n{font:600 110px/1 var(--serif)}
+.op small{display:block;font:400 28px/1.2 var(--sans);color:var(--grafito);margin-top:10px}
+.op.ok{background:var(--tinta);color:var(--papel)} .op.ok small{color:var(--filete)}
+
+/* 4.8 Tira de balance */
+.balance{display:flex;height:96px;font:500 30px var(--sans)}
+.balance div{display:flex;align-items:center;justify-content:center;transition:width .8s var(--ease)}
+
+/* 4.9 Pantalla negra / notas / cuadrícula */
+#negro{position:fixed;inset:0;background:#000;z-index:50;display:none}
+body.negro #negro{display:block}
+#notas{position:fixed;left:0;right:0;bottom:0;max-height:34vh;overflow:auto;background:rgba(28,28,26,.96);color:#f1ede3;
+  font:400 20px/1.5 var(--sans);padding:18px 28px;z-index:40;display:none;white-space:pre-wrap}
+#notas.abierta{display:block}
+#cuadricula{position:fixed;inset:0;z-index:45;background:#1c1c1a;overflow:auto;display:none;padding:32px;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;align-content:start}
+body.grid #cuadricula{display:grid}
+#cuadricula button{all:unset;cursor:pointer;background:var(--papel);color:var(--tinta);padding:14px 16px;min-height:110px;border-left:4px solid var(--filete);box-sizing:border-box}
+#cuadricula button.cur{border-left-color:var(--rojo);outline:2px solid var(--rojo)}
+#cuadricula small{display:block;font:500 12px var(--mono);letter-spacing:.1em;color:var(--rojo);text-transform:uppercase;margin-bottom:6px}
+#cuadricula span{font:600 18px/1.15 var(--serif)}
+#salto{position:fixed;right:20px;top:16px;z-index:60;font:500 22px var(--mono);background:var(--tinta);color:var(--papel);padding:6px 14px;display:none}
+#salto.v{display:block}
+
+/* ============ 5. IMPRESIÓN (PDF de respaldo) ============ */
+@media print{
+  @page{size:1920px 1080px;margin:0}
+  html,body{overflow:visible;height:auto;background:#fff}
+  #escenario{position:static;transform:none!important;width:1920px;height:auto}
+  section{position:relative;display:flex;opacity:1!important;visibility:visible!important;height:1080px;page-break-after:always;break-after:page;transition:none}
+  [data-p]{opacity:1!important;transform:none!important}
+  .ent,.fade{animation:none;opacity:1;transform:none}
+  .trazo,.dibuja use,.dibuja .tr{animation:none!important;stroke-dashoffset:0!important}
+  #notas,#cuadricula,#negro,#salto{display:none!important}
+}
+
+.sb{font-size:.62em}
