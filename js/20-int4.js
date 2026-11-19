@@ -1,10 +1,12 @@
 /* ============ ANIMACIONES: cascada, noria, máquina térmica y ciclo de Carnot (canvas) ============ */
 (() => {
   const TAU = Math.PI * 2;
-  const C = { tinta: '#1C1C1A', graf: '#5E5D58', filete: '#D8D2C4', rojo: '#B3261E', azul: '#1F4A78', ocre: '#A8873A', papel: '#F4F1EA' };
+  const cs = getComputedStyle(document.documentElement), tv = (n, d) => cs.getPropertyValue(n).trim() || d;
+  const C = { tinta: tv('--tinta', '#1C1C1A'), graf: tv('--grafito', '#5E5D58'), filete: tv('--filete', '#D8D2C4'), rojo: tv('--rojo', '#B3261E'), azul: tv('--azul', '#1F4A78'), ocre: tv('--ocre', '#A8873A'), papel: tv('--papel', '#F4F1EA') };
+  const hx = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
   const rnd = (i) => { const x = Math.sin(i * 12.9898 + 4.1) * 43758.5453; return x - Math.floor(x); };
   const mix = (a, b, u) => a.map((v, i) => Math.round(v + (b[i] - v) * u));
-  const RGB_AZ = [31, 74, 120], RGB_RO = [179, 38, 30];
+  const RGB_AZ = hx(C.azul), RGB_RO = hx(C.rojo);
 
   // ---- Ciclo de vida de una escena en canvas (start/stop con pausa real) ----
   function escena(id, cvId, dibuja, o = {}) {

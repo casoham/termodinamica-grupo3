@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const raiz = path.dirname(fileURLToPath(import.meta.url));
+const TEMA = process.argv.includes('--tema=rediseno') ? 'rediseno' : '';
 const R = (...p) => path.join(raiz, ...p);
 const leer = (f) => fs.readFileSync(R(f), 'utf8');
 const b64 = (f) => fs.readFileSync(R(f)).toString('base64');
@@ -22,6 +23,7 @@ const fuentes = [
   ['IBM Plex Mono', 400, 'normal', 'ibm-plex-mono_latin-400-normal', ''],
   ['IBM Plex Mono', 500, 'normal', 'ibm-plex-mono_latin-500-normal', ''],
   ['STIX Two Math', 400, 'normal', 'stix-two-math_latin-400-normal', ''],
+  ...(TEMA ? [['Instrument Serif', 400, 'normal', 'instrument-serif_latin-400-normal', ''], ['Instrument Serif', 400, 'italic', 'instrument-serif_latin-400-italic', '']] : []),
   ['STIX Two Text', 400, 'italic', 'stix-two-text_latin-400-italic', ''],
   ['STIX Two Text', 400, 'italic', 'stix-two-text_greek-400-italic', 'U+0370-03FF'],
 ];
@@ -51,7 +53,7 @@ function macros(s) {
 // ---- Diapositivas ----
 const orden = fs.readdirSync(R('slides')).filter((f) => /^\d\d-.*\.html$/.test(f)).sort();
 let secciones = '';
-for (const f of orden) secciones += macros(leer('slides/' + f)) + '\n';
+for (const f of orden) secciones += macros(TEMA && fs.existsSync(R('slides-r', f)) ? leer('slides-r/' + f) : leer('slides/' + f)) + '\n';
 // Marca institucional discreta en cada diapositiva
 secciones = secciones.replace(/(<section[^>]*>)/g, `$1<div class="ins"><img src="${logo}" alt="Instituto Kriete"></div>`);
 
@@ -67,10 +69,12 @@ const pagina = `<!doctype html>
 ${faces}
 ${leer('css/base.css')}
 ${leer('css/slides.css')}
+${TEMA ? leer('css/rediseno.css') : ''}
 </style>
 </head>
 <body>
 ${leer('slides/defs.svg')}
+${TEMA ? leer('slides-r/defs-r.svg') : ''}
 <main id="escenario">
 ${secciones}</main>
 <div id="negro"></div><div id="notas" role="note"></div><div id="cuadricula"></div><div id="salto"></div>
@@ -84,5 +88,5 @@ ${leer('js/engine.js')}
 </body>
 </html>
 `;
-fs.writeFileSync(R('index.html'), pagina);
+fs.writeFileSync(TEMA ? R('rediseno', 'index.html') : R('index.html'), pagina);
 console.log(`ok · ${(pagina.match(/<section /g) || []).length} diapositivas · ${(pagina.length / 1e6).toFixed(2)} MB`);

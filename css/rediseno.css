@@ -1,0 +1,95 @@
+/* ============ REDISEÑO · «Q» edición ilustrada ============
+   Referencia: plantilla editorial «Article» (papel gris-beige, rojo intenso, tipografía condensada
+   de alto contraste, tinta negra, títulos que se solapan con la ilustración, columnas de texto angostas).
+   Paleta muestreada de la referencia: papel #E7E7DD · cubierta #F4F2EF · rojo #BC0D0D · tinta casi negra. */
+:root{
+  --papel:#E7E7DD; --papel-claro:#F4F2EF; --tinta:#141414; --grafito:#55544F; --filete:#C6C5B8;
+  --rojo:#BC0D0D;
+  --display:'Instrument Serif','Bodoni Moda',Georgia,serif;
+  --sans:'Newsreader',Georgia,serif; --mono:'Newsreader',Georgia,serif;
+}
+
+/* ---- Tipografía editorial ---- */
+.k{font:600 22px/1 var(--serif);letter-spacing:.2em;text-transform:uppercase;color:var(--rojo);border:0;padding:0;margin:0 0 20px}
+.t{font:400 108px/.9 var(--display);text-transform:uppercase;color:var(--rojo);letter-spacing:.004em;
+   max-width:none;width:calc(100% / .8);transform:scaleX(.8);transform-origin:0 0;margin:0;font-variation-settings:normal}
+.t+.sub,.t+p{margin-top:26px}
+.sub{font:italic 600 36px/1.25 var(--serif);color:var(--tinta);margin:10px 0 0}
+.cuerpo{font-size:36px;line-height:1.38}
+.big,.big2,.preg2,.cita q{font-family:var(--serif)}
+.big{font-style:italic;font-weight:400}
+.eq,.defs b{color:var(--tinta)}
+.fuente{font:italic 400 20px/1.3 var(--serif)}
+.fig-cap{font:italic 400 24px/1.3 var(--serif);color:var(--grafito)}
+.fig-cap b{font:600 22px var(--serif);letter-spacing:.12em;color:var(--rojo);text-transform:uppercase}
+.folio{border-top:1px solid var(--filete);font:italic 400 19px/1 var(--serif);color:var(--grafito)}
+.folio span:last-child{font-style:normal;letter-spacing:.14em}
+.ins{opacity:.9}
+.tx{font-family:var(--serif);font-weight:600}
+.tx.m{font-weight:600;letter-spacing:.14em}
+.chv b,.chs b,.c4 b,.op b,.k2,.geo-p b,.acc,table.ed th,table.ed td:first-child,.cop .et{font-family:var(--serif);letter-spacing:.14em}
+.acc{border-color:var(--rojo)}
+.chv span,.c4 span,.chs span{font-family:var(--serif);font-weight:600}
+.pe h3,.vi h3,.defs b{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.01em}
+.pe h3{font-size:54px;line-height:1}.vi h3{font-size:52px;line-height:1}
+.pe p,.vi p,.defs span{font-family:var(--serif)}
+.cop .n,.cien,.bv,.d1 .n,.op .n{font-family:var(--display);font-weight:400}
+.cien{font-size:290px;line-height:.85;letter-spacing:0}
+.op .n{font-size:150px;line-height:.9}
+.cop .n{font-size:260px;line-height:.85}
+.bv{font-size:72px}
+.d1 .n{font-size:100px}
+.resp,.remate{font-family:var(--serif)}
+.refs{font-family:var(--serif)}
+.refs li::before{font-family:var(--serif);font-weight:600}
+
+/* ---- Figuras: trazo de tinta con temblor de pincel ---- */
+svg .lin,svg .rel,svg .flecha,svg .fig-ax,svg .fig-c{filter:url(#tinta)}
+.lin{stroke-width:3.6}.rel{stroke-width:3.6}
+svg.refri .lavado{display:none}
+.lavado{position:absolute;inset:-18% -30%;background:radial-gradient(ellipse at 50% 55%,rgba(20,20,20,.16),rgba(20,20,20,.06) 55%,transparent 72%);z-index:-1;border-radius:50%}
+tinta,.fig-c{stroke-width:5.4}
+.fig-c.ad{stroke-width:4}
+
+/* ---- Divisorias: numeral gigante que se cruza con la figura ---- */
+.div .num{left:30px;top:150px;font:400 800px/.8 var(--display);color:var(--rojo);letter-spacing:-.02em;transform:scaleX(.78);transform-origin:0 0;z-index:1}
+.div .num.s{font-size:700px;top:190px}
+.div .fg{left:600px;right:auto;top:150px;width:500px;z-index:3}
+#i1-div .fg{left:700px}
+.div .fg::before{content:"";position:absolute;inset:-12% -40% -6% -40%;background:radial-gradient(ellipse at 50% 55%,rgba(20,20,20,.16),rgba(20,20,20,.05) 58%,transparent 72%);z-index:-1}
+.div .fg svg{display:block;width:100%;height:auto}
+.div .txt{left:1290px;right:100px;bottom:130px;max-width:none;z-index:4}
+.div .txt h2{font:400 104px/.92 var(--display);text-transform:uppercase;color:var(--rojo);margin:0 0 18px}
+.div .txt p{font:italic 600 38px/1.2 var(--serif);color:var(--tinta)}
+.div .k{position:absolute;left:120px;right:120px;top:84px;z-index:5;margin:0}
+
+/* ---- Portada: título gigante cruzado por la figura ---- */
+#portada.cover{background:var(--papel-claro);padding:0}
+.cv-mast{position:absolute;left:130px;top:44px;margin:0;font:600 22px/1.5 var(--serif);letter-spacing:.2em;text-transform:uppercase;color:var(--tinta)}
+.cv-h{position:absolute;inset:0;margin:0;font-weight:400}
+.cv-h span{position:absolute;display:block}
+.cv-big{left:100px;top:96px;font:400 292px/.9 var(--display);text-transform:uppercase;color:var(--rojo);transform:scaleX(.74);transform-origin:0 0;white-space:nowrap;letter-spacing:-.01em}
+.cv-pre{left:130px;top:470px;font:italic 600 56px/1 var(--serif);color:var(--tinta)}
+.cv-post{left:130px;top:540px;font:italic 600 64px/1.05 var(--serif);color:var(--tinta);max-width:560px}
+.cv-fig{position:absolute;left:1210px;top:300px;z-index:3}
+.cv-fig .lavado{display:block;position:absolute;inset:-6% -60% -2% -60%;z-index:-1}
+.cv-meta{position:absolute;left:130px;top:750px;margin:0;font:400 30px/1.45 var(--serif);color:var(--tinta);max-width:1000px}
+.cv-meta b{color:var(--rojo);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:24px}
+.cv-lista{position:absolute;left:130px;top:872px;list-style:none;margin:0;padding:0;columns:2;column-gap:60px;font:400 25px/1.5 var(--serif);color:var(--grafito);max-width:1000px}
+#portada .folio{display:none}
+
+/* ---- Citas y tesis ---- */
+.cita q::before,.cita q::after{color:var(--rojo)}
+.cita .fir{font:600 22px var(--serif);letter-spacing:.2em}
+
+/* ---- Tablas ---- */
+table.ed th{border-bottom:2px solid var(--tinta);color:var(--rojo)}
+
+/* ---- Barras y bloques ---- */
+.balance div{font-family:var(--serif);font-weight:600}
+.bb{background:#D5D4C8}
+.chv>div,.chs>div,.c4>div{background:#D5D4C8}
+.chv.hit>div,.chs.hit>div{background:var(--tinta)}
+
+/* ---- Retrato de Carnot ---- */
+.marco{background:var(--papel);border-color:var(--tinta)}

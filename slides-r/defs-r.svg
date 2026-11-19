@@ -1,0 +1,15 @@
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+  <!-- trazo de tinta: ligero temblor de pincel -->
+  <filter id="tinta" x="-4%" y="-4%" width="108%" height="108%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency=".03" numOctaves="2" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="3.4" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <!-- mancha de acuarela para detrás de las figuras -->
+  <radialGradient id="lavado" cx=".5" cy=".5" r=".5">
+    <stop offset="0" stop-color="#141414" stop-opacity=".16"/>
+    <stop offset=".6" stop-color="#141414" stop-opacity=".07"/>
+    <stop offset="1" stop-color="#141414" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+</svg>
