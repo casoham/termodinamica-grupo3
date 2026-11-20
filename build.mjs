@@ -31,7 +31,7 @@ const faces = fuentes.map(([fam, w, st, f, ur]) =>
   `@font-face{font-family:'${fam}';font-weight:${w};font-style:${st};font-display:block;src:url(data:font/woff2;base64,${b64('fuentes/' + f + '.woff2')}) format('woff2');${ur ? 'unicode-range:' + ur + ';' : ''}}`).join('\n');
 
 // ---- Recursos en línea ----
-const logo = 'data:image/svg+xml;base64,' + b64('recursos/logo-key-tinta.svg');
+const logo = 'data:image/svg+xml;base64,' + b64('recursos/logo-key-simple.svg');
 const carnot = 'data:image/jpeg;base64,' + b64('recursos/carnot.jpg');
 const entropia = 'data:image/jpeg;base64,' + b64('recursos/entropia.jpg');
 
