@@ -267,3 +267,6 @@ section.activa .esc{animation-play-state:running}
 @keyframes deriva{0%,100%{transform:translate(0,0)}33%{transform:translate(40px,-24px)}66%{transform:translate(-26px,18px)}}
 .t4{transform-box:fill-box;transform-origin:50% 60%;animation:latido 2.2s ease-in-out infinite}
 @keyframes latido{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+.igual-b{color:var(--rojo)}
+#i1-igual.p1 .igual-a{opacity:0!important;animation:none}
+#i1-igual .c{display:block}
