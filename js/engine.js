@@ -34,7 +34,7 @@ window.Q = Object.assign(window.Q || {}, { vida: (window.Q && window.Q.vida) || 
     nueva.classList.add('activa');
     ponerPaso(nueva, final ? N(nueva) : 0);
     // reinicia animaciones CSS de entrada
-    nueva.querySelectorAll('.ent,.fade,.trazo,.dibuja').forEach((e) => { e.style.animation = 'none'; void e.offsetWidth; e.style.animation = ''; });
+    nueva.querySelectorAll('.ent,.fade,.trazo,.dibuja,.esc').forEach((e) => { e.style.animation = 'none'; void e.offsetWidth; e.style.animation = ''; });
     actual = i;
     iniciar(nueva);
     const a = nueva.querySelector('aside');

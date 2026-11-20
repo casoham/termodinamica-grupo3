@@ -245,3 +245,25 @@ table.ed{font-size:36px} table.ed td{padding:32px 30px 32px 0} table.ed th{font-
 @keyframes fo{0%,100%{opacity:.35;transform:translateX(-10px)}50%{opacity:1;transform:translateX(10px)}}
 .ins img{height:44px!important}.ins{top:36px}
 .ins img{height:52px!important}.ins{top:30px}
+
+/* ---- animaciones extra del integrante 1 ---- */
+.h-frase{display:block}
+.h-frase .ent{display:inline-block}
+.h-preg.on{animation:resp 2.6s ease-in-out 1s infinite}
+@keyframes resp{0%,100%{opacity:1}50%{opacity:.55}}
+.esc{transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(0);animation:crece .8s var(--ease) forwards;animation-delay:calc(var(--i)*.3s + .2s);animation-play-state:paused}
+section.activa .esc{animation-play-state:running}
+@keyframes crece{to{transform:scaleY(1)}}
+.tj:has(.on){animation:tjin .8s var(--ease)}
+@keyframes tjin{from{opacity:0;transform:translateY(46px) rotate(-2deg)}}
+.tj-n.on{animation:pop .7s var(--ease)}
+@keyframes pop{0%{transform:scale(.5)}60%{transform:scale(1.15)}100%{transform:scale(1)}}
+.tj-hueco{animation:hueco 2.4s ease-in-out infinite alternate}
+@keyframes hueco{to{border-color:var(--rojo);opacity:.6}}
+@keyframes marcha{to{stroke-dashoffset:-36}}
+#i1-aula rect[stroke-dasharray]{animation:marcha 1.4s linear infinite}
+.march{stroke-dasharray:10 8;animation:marcha .9s linear infinite}
+.aire{opacity:.45;animation:deriva 7s ease-in-out infinite;animation-delay:var(--dl,0s)}
+@keyframes deriva{0%,100%{transform:translate(0,0)}33%{transform:translate(40px,-24px)}66%{transform:translate(-26px,18px)}}
+.t4{transform-box:fill-box;transform-origin:50% 60%;animation:latido 2.2s ease-in-out infinite}
+@keyframes latido{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}

@@ -438,6 +438,28 @@ table.ed{font-size:36px} table.ed td{padding:32px 30px 32px 0} table.ed th{font-
 .ins img{height:44px!important}.ins{top:36px}
 .ins img{height:52px!important}.ins{top:30px}
 
+/* ---- animaciones extra del integrante 1 ---- */
+.h-frase{display:block}
+.h-frase .ent{display:inline-block}
+.h-preg.on{animation:resp 2.6s ease-in-out 1s infinite}
+@keyframes resp{0%,100%{opacity:1}50%{opacity:.55}}
+.esc{transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(0);animation:crece .8s var(--ease) forwards;animation-delay:calc(var(--i)*.3s + .2s);animation-play-state:paused}
+section.activa .esc{animation-play-state:running}
+@keyframes crece{to{transform:scaleY(1)}}
+.tj:has(.on){animation:tjin .8s var(--ease)}
+@keyframes tjin{from{opacity:0;transform:translateY(46px) rotate(-2deg)}}
+.tj-n.on{animation:pop .7s var(--ease)}
+@keyframes pop{0%{transform:scale(.5)}60%{transform:scale(1.15)}100%{transform:scale(1)}}
+.tj-hueco{animation:hueco 2.4s ease-in-out infinite alternate}
+@keyframes hueco{to{border-color:var(--rojo);opacity:.6}}
+@keyframes marcha{to{stroke-dashoffset:-36}}
+#i1-aula rect[stroke-dasharray]{animation:marcha 1.4s linear infinite}
+.march{stroke-dasharray:10 8;animation:marcha .9s linear infinite}
+.aire{opacity:.45;animation:deriva 7s ease-in-out infinite;animation-delay:var(--dl,0s)}
+@keyframes deriva{0%,100%{transform:translate(0,0)}33%{transform:translate(40px,-24px)}66%{transform:translate(-26px,18px)}}
+.t4{transform-box:fill-box;transform-origin:50% 60%;animation:latido 2.2s ease-in-out infinite}
+@keyframes latido{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+
 /* ============ REDISEÑO · «Q» edición ilustrada ============
    Referencia: plantilla editorial «Article» (papel gris-beige, rojo intenso, tipografía condensada
    de alto contraste, tinta negra, títulos que se solapan con la ilustración, columnas de texto angostas).
@@ -665,7 +687,7 @@ table.ed th{border-bottom:2px solid var(--tinta);color:var(--rojo)}
 <!-- ============ INTEGRANTE 1 · § 00 LEY CERO (guion «Ley cero y equilibrio térmico») ============ -->
 <!-- 1.1 · fondo oscuro, solo la frase -->
 <section id="i1-hook" data-pasos="1"><div class="ins"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAiIGhlaWdodD0iNjkiIHZpZXdCb3g9IjAgMCA3MCA2OSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0zMC41MjE3IDI1LjY4NTdMMjUuNDg2MSAyOC41NjU0TDExLjk1NTIgMjAuODMxTDUuMDM1NTcgMjQuNzg0OUwyNS40ODYxIDM2LjQ3NjlMMzcuNDQxMyAyOS42NDM0VjAuNUwzMC41MjE3IDQuNDU3NjVWMjUuNjg1N1oiIGZpbGw9IiMxQzFDMUEiLz4NCjxwYXRoIGQ9Ik0yNS40ODYxIDM4LjI3ODZMMCA1Mi44NTAzTDYuOTE5NjIgNTYuODA4TDI1LjQ4NjEgNDYuMTkwMkwzMC41MjE3IDQ5LjA2OThWNjguNUwzNy40NDEzIDY0LjU0MjRWNDUuMTE1OUwyNS40ODYxIDM4LjI3ODZaIiBmaWxsPSIjMUMxQzFBIi8+DQo8cGF0aCBkPSJNNjcuOTU5MiA1Mi44NTAzTDQ1LjkzMjkgNDAuMjU3NFYzNC40OTgxTDU5LjQ2MzkgMjYuNzYzN1YxOC44NTIyTDM5LjAxNzEgMzAuNTQ0MlY0NC4yMTUxTDYxLjAzOTYgNTYuODA4TDY3Ljk1OTIgNTIuODUwM1oiIGZpbGw9IiMxQzFDMUEiLz4NCjwvc3ZnPg==" alt="Instituto Kriete"></div>
-<p class="h-frase ent" style="--i:1">Su mano les va a mentir</p>
+<p class="h-frase"><span class="ent" style="--i:3">Su</span> <span class="ent" style="--i:6">mano</span> <span class="ent" style="--i:9">les</span> <span class="ent" style="--i:12">va</span> <span class="ent" style="--i:15">a</span> <span class="ent" style="--i:19;color:#E85A4F">mentir</span></p>
 <p class="h-preg" data-p="1">¿Cuál de los dos está más frío?</p>
 <aside>0:00 · Hook.
 “Su mano les va a mentir en los próximos diez segundos.”
@@ -692,6 +714,14 @@ table.ed th{border-bottom:2px solid var(--tinta);color:var(--rojo)}
   <path class="flecha s-rojo trazo" d="M440 230 H270" marker-end="url(#pf-rojo)" style="--i:3;stroke-width:22" pathLength="1"/>
   <path class="flecha s-rojo trazo" d="M440 330 H270" marker-end="url(#pf-rojo)" style="--i:3;stroke-width:22" pathLength="1"/>
   <path class="flecha s-rojo trazo" d="M440 430 H270" marker-end="url(#pf-rojo)" style="--i:3;stroke-width:22" pathLength="1"/>
+  <circle class="pt" r="9" fill="#F4F2EF" style="offset-path:path('M440 230 H270');--d:1.1s;--dl:-.2s"/>
+  <circle class="pt" r="9" fill="#F4F2EF" style="offset-path:path('M440 230 H270');--d:1.1s;--dl:-.8s"/>
+  <circle class="pt" r="9" fill="#F4F2EF" style="offset-path:path('M440 330 H270');--d:1.1s;--dl:-.2s"/>
+  <circle class="pt" r="9" fill="#F4F2EF" style="offset-path:path('M440 330 H270');--d:1.1s;--dl:-.8s"/>
+  <circle class="pt" r="9" fill="#F4F2EF" style="offset-path:path('M440 430 H270');--d:1.1s;--dl:-.2s"/>
+  <circle class="pt" r="9" fill="#F4F2EF" style="offset-path:path('M440 430 H270');--d:1.1s;--dl:-.8s"/>
+  <circle class="pt" r="6" fill="var(--tinta)" style="offset-path:path('M1300 370 H1130');--d:3.4s;--dl:-1s"/>
+  <circle class="pt" r="6" fill="var(--tinta)" style="offset-path:path('M1300 460 H1130');--d:3.4s;--dl:-1s"/>
   <text x="400" y="86" class="tx" text-anchor="middle" style="font-size:32px">metal: pierde calor rápido</text>
   <!-- plástico -->
   <use href="#mano" x="880" y="150" width="200" height="250" class="fade" style="--i:1" transform="rotate(90 980 275)"/>
@@ -784,9 +814,10 @@ Clic 5 · las cuatro tarjetas se reordenan: 0, 1, 2, 3.</aside>
 <div class="c" style="margin-top:0">
 <svg viewBox="0 0 1680 700" width="1680" height="700" role="img" aria-label="Una escalera con los escalones 1, 2 y 3; al final aparece el escalón 0 por debajo de todos, como base">
   <line class="lin" x1="60" y1="520" x2="1620" y2="520"/>
-  <g class="fade" style="--i:1"><rect class="rel" x="260" y="400" width="300" height="120" style="fill:#D5D4C8"/><text x="410" y="480" text-anchor="middle" style="font:400 90px var(--display);fill:var(--tinta)">1</text></g>
-  <g class="fade" style="--i:3"><rect class="rel" x="560" y="280" width="300" height="240" style="fill:#D5D4C8"/><text x="710" y="480" text-anchor="middle" style="font:400 90px var(--display);fill:var(--tinta)">2</text></g>
-  <g class="fade" style="--i:5"><rect class="rel" x="860" y="160" width="300" height="360" style="fill:#D5D4C8"/><text x="1010" y="480" text-anchor="middle" style="font:400 90px var(--display);fill:var(--tinta)">3</text></g>
+  <g class="esc" style="--i:1"><rect class="rel" x="260" y="400" width="300" height="120" style="fill:#D5D4C8"/><text x="410" y="480" text-anchor="middle" style="font:400 90px var(--display);fill:var(--tinta)">1</text></g>
+  <g class="esc" style="--i:3"><rect class="rel" x="560" y="280" width="300" height="240" style="fill:#D5D4C8"/><text x="710" y="480" text-anchor="middle" style="font:400 90px var(--display);fill:var(--tinta)">2</text></g>
+  <g class="esc" style="--i:5"><rect class="rel" x="860" y="160" width="300" height="360" style="fill:#D5D4C8"/><text x="1010" y="480" text-anchor="middle" style="font:400 90px var(--display);fill:var(--tinta)">3</text></g>
+  <circle class="pt" r="16" fill="var(--rojo)" style="offset-path:path('M380 384 Q470 240 600 264 Q740 140 900 144 L1100 144');--d:4.2s;--dl:-1s"/>
   <g class="base0" data-p="1"><rect class="rel" x="260" y="520" width="900" height="110" style="fill:var(--rojo)"/><text x="710" y="605" text-anchor="middle" style="font:400 100px var(--display);fill:#fff">0</text></g>
 </svg>
 <p class="h-cita" data-p="1" style="left:1220px;top:110px;width:420px">Lo importante es dar el primer paso.</p>
@@ -808,6 +839,10 @@ Una escalera con los escalones 1, 2 y 3 ya puestos; al hacer clic aparece el esc
     <g class="fade" style="--i:6"><circle class="rel" cx="1015" cy="85" r="70"/><text x="1015" y="106" text-anchor="middle" style="font:400 76px var(--display)">B</text></g>
     <path class="flecha s-rojo trazo" d="M168 85 H462 M462 85 L440 70 M462 85 L440 100 M168 85 L190 70 M168 85 L190 100" style="--i:7;stroke-width:6" pathLength="1"/>
     <path class="flecha s-rojo trazo" d="M638 85 H932 M932 85 L910 70 M932 85 L910 100 M638 85 L660 70 M638 85 L660 100" style="--i:8;stroke-width:6" pathLength="1"/>
+    <circle class="pt" r="8" fill="var(--rojo)" style="offset-path:path('M168 85 H462');--d:2.2s;--dl:-.2s"/>
+    <circle class="pt" r="8" fill="var(--rojo)" style="offset-path:path('M462 85 H168');--d:2.2s;--dl:-1.1s"/>
+    <circle class="pt" r="8" fill="var(--rojo)" style="offset-path:path('M932 85 H638');--d:2.2s;--dl:-.6s"/>
+    <circle class="pt" r="8" fill="var(--rojo)" style="offset-path:path('M638 85 H932');--d:2.2s;--dl:-1.5s"/>
   </svg>
 </div>
 <aside>3:10 · Evidencia 3: la analogía de la refri.
@@ -835,7 +870,8 @@ Una escalera con los escalones 1, 2 y 3 ya puestos; al hacer clic aparece el esc
   <g><circle cx="250" cy="480" r="30" class="rel s-rojo" style="fill:var(--papel)"/><text x="250" y="494" text-anchor="middle" style="font:400 40px var(--display)">A</text><path class="lin fino" d="M280 480 H330" style="stroke-dasharray:6 6"/></g>
   <g><circle cx="900" cy="280" r="30" class="rel s-azul" style="fill:var(--papel)"/><text x="900" y="294" text-anchor="middle" style="font:400 40px var(--display)">B</text><path class="lin fino" d="M880 304 L820 340" style="stroke-dasharray:6 6"/></g>
   <g data-p="1"><circle cx="560" cy="480" r="42" class="rel" style="fill:var(--rojo);stroke:var(--rojo)"/><text x="560" y="500" text-anchor="middle" style="font:400 56px var(--display);fill:#fff">C</text>
-    <path class="flecha" d="M516 480 H290 M596 458 L876 306" style="stroke:var(--rojo);stroke-width:4;stroke-dasharray:8 8"/></g>
+    <path class="flecha" d="M516 480 H290 M596 458 L876 306" style="stroke:var(--rojo);stroke-width:4;stroke-dasharray:8 8"/><circle class="pt" r="8" fill="var(--rojo)" style="offset-path:path('M516 480 H290');--d:2.4s"/><circle class="pt" r="8" fill="var(--azul)" style="offset-path:path('M290 480 H516');--d:2.4s;--dl:-1.2s"/><circle class="pt" r="8" fill="var(--rojo)" style="offset-path:path('M596 458 L876 306');--d:2.6s"/><circle class="pt" r="8" fill="var(--azul)" style="offset-path:path('M876 306 L596 458');--d:2.6s;--dl:-1.3s"/></g>
+  <g data-p="1"><circle class="aire" cx="160" cy="220" r="5" fill="var(--azul)" style="--dl:-0s"/><circle class="aire" cx="420" cy="140" r="5" fill="var(--azul)" style="--dl:-1s"/><circle class="aire" cx="700" cy="200" r="5" fill="var(--azul)" style="--dl:-2s"/><circle class="aire" cx="960" cy="120" r="5" fill="var(--azul)" style="--dl:-3s"/><circle class="aire" cx="1000" cy="420" r="5" fill="var(--azul)" style="--dl:-4s"/><circle class="aire" cx="150" cy="560" r="5" fill="var(--azul)" style="--dl:-5s"/><circle class="aire" cx="520" cy="560" r="5" fill="var(--azul)" style="--dl:-6s"/><circle class="aire" cx="900" cy="540" r="5" fill="var(--azul)" style="--dl:-7s"/></g>
 </svg>
 <div class="aula-t">
   <p><b>A</b>La pata metálica</p>
@@ -859,12 +895,12 @@ Una escalera con los escalones 1, 2 y 3 ya puestos; al hacer clic aparece el esc
 <div class="c" style="margin-top:0">
 <svg viewBox="0 0 1680 640" width="1680" height="600" role="img" aria-label="Interior de una refrigeradora: el termómetro, la comida y el aire marcan 4 grados">
   <use href="#refri-corte" x="40" y="20" width="480" height="560" class="refri"/>
-  <g class="fade" style="--i:2"><circle cx="390" cy="230" r="22" class="rel s-rojo" style="fill:var(--papel)"/><text x="390" y="239" text-anchor="middle" class="tx">T</text><path class="lin fino" d="M412 230 H720"/></g>
-  <g class="fade" style="--i:3"><circle cx="238" cy="353" r="22" class="rel s-azul" style="fill:var(--papel)"/><text x="238" y="362" text-anchor="middle" class="tx">F</text><path class="lin fino" d="M258 368 L560 432 H720"/></g>
-  <g class="fade" style="--i:4"><circle cx="340" cy="325" r="22" class="rel" style="fill:var(--papel)"/><text x="340" y="334" text-anchor="middle" class="tx">C</text><path class="lin fino" d="M362 325 H720"/></g>
-  <g class="fade" style="--i:2"><text x="740" y="240" class="tx" style="font-size:36px">Termómetro</text><text x="1180" y="240" style="font:400 76px var(--display);fill:var(--rojo)">4 °C</text></g>
-  <g class="fade" style="--i:4"><text x="740" y="335" class="tx" style="font-size:36px">Aire</text><text x="1180" y="335" style="font:400 76px var(--display);fill:var(--rojo)">4 °C</text></g>
-  <g class="fade" style="--i:3"><text x="740" y="442" class="tx" style="font-size:36px">Comida</text><text x="1180" y="442" style="font:400 76px var(--display);fill:var(--rojo)">4 °C</text></g>
+  <g class="fade" style="--i:2"><circle cx="390" cy="230" r="22" class="rel s-rojo" style="fill:var(--papel)"/><text x="390" y="239" text-anchor="middle" class="tx">T</text><path class="lin fino march" d="M412 230 H720"/></g>
+  <g class="fade" style="--i:3"><circle cx="238" cy="353" r="22" class="rel s-azul" style="fill:var(--papel)"/><text x="238" y="362" text-anchor="middle" class="tx">F</text><path class="lin fino march" d="M258 368 L560 432 H720"/></g>
+  <g class="fade" style="--i:4"><circle cx="340" cy="325" r="22" class="rel" style="fill:var(--papel)"/><text x="340" y="334" text-anchor="middle" class="tx">C</text><path class="lin fino march" d="M362 325 H720"/></g>
+  <g class="fade" style="--i:2"><text x="740" y="240" class="tx" style="font-size:36px">Termómetro</text><text x="1180" y="240" class="t4" style="font:400 76px var(--display);fill:var(--rojo)">4 °C</text></g>
+  <g class="fade" style="--i:4"><text x="740" y="335" class="tx" style="font-size:36px">Aire</text><text x="1180" y="335" class="t4" style="font:400 76px var(--display);fill:var(--rojo)">4 °C</text></g>
+  <g class="fade" style="--i:3"><text x="740" y="442" class="tx" style="font-size:36px">Comida</text><text x="1180" y="442" class="t4" style="font:400 76px var(--display);fill:var(--rojo)">4 °C</text></g>
 </svg>
 </div>
 <p class="fig-cap" style="position:absolute;left:120px;bottom:90px"><b>Equilibrio</b>Aunque unas cosas se sientan más frías que otras, las tres miden lo mismo.</p>
@@ -887,6 +923,15 @@ Una escalera con los escalones 1, 2 y 3 ya puestos; al hacer clic aparece el esc
     <!-- rojas salen por atrás -->
     <g class="fade" style="--i:6">
       <path class="flecha s-rojo flujo-o" d="M480 160 H600" marker-end="url(#pf-rojo)" style="stroke-width:8"/><path class="flecha s-rojo flujo-o" d="M480 280 H600" marker-end="url(#pf-rojo)" style="stroke-width:8;animation-delay:-.4s"/><path class="flecha s-rojo flujo-o" d="M480 400 H600" marker-end="url(#pf-rojo)" style="stroke-width:8;animation-delay:-.8s"/><path class="flecha s-rojo flujo-o" d="M480 520 H600" marker-end="url(#pf-rojo)" style="stroke-width:8;animation-delay:-1.2s"/></g>
+    <!-- partículas -->
+    <circle class="pt" r="7" fill="var(--azul)" style="offset-path:path('M130 160 H250');--d:1.8s;--dl:-.2s"/>
+    <circle class="pt" r="9" fill="var(--rojo)" style="offset-path:path('M480 160 H620');--d:1.8s;--dl:-.2s"/>
+    <circle class="pt" r="7" fill="var(--azul)" style="offset-path:path('M130 280 H250');--d:1.8s;--dl:-.6s"/>
+    <circle class="pt" r="9" fill="var(--rojo)" style="offset-path:path('M480 280 H620');--d:1.8s;--dl:-.6s"/>
+    <circle class="pt" r="7" fill="var(--azul)" style="offset-path:path('M130 400 H250');--d:1.8s;--dl:-1s"/>
+    <circle class="pt" r="9" fill="var(--rojo)" style="offset-path:path('M480 400 H620');--d:1.8s;--dl:-1s"/>
+    <circle class="pt" r="7" fill="var(--azul)" style="offset-path:path('M130 520 H250');--d:1.8s;--dl:-1.4s"/>
+    <circle class="pt" r="9" fill="var(--rojo)" style="offset-path:path('M480 520 H620');--d:1.8s;--dl:-1.4s"/>
   </svg>
 </div>
 <aside>5:25–6:00 · Cierre (diapositiva 1.12).
@@ -1937,7 +1982,7 @@ window.Q = Object.assign(window.Q || {}, { vida: (window.Q && window.Q.vida) || 
     nueva.classList.add('activa');
     ponerPaso(nueva, final ? N(nueva) : 0);
     // reinicia animaciones CSS de entrada
-    nueva.querySelectorAll('.ent,.fade,.trazo,.dibuja').forEach((e) => { e.style.animation = 'none'; void e.offsetWidth; e.style.animation = ''; });
+    nueva.querySelectorAll('.ent,.fade,.trazo,.dibuja,.esc').forEach((e) => { e.style.animation = 'none'; void e.offsetWidth; e.style.animation = ''; });
     actual = i;
     iniciar(nueva);
     const a = nueva.querySelector('aside');
