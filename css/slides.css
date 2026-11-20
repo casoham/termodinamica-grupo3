@@ -187,3 +187,11 @@ table.ed{font-size:36px} table.ed td{padding:32px 30px 32px 0} table.ed th{font-
 .et-r{position:absolute;font:600 32px/1.2 var(--serif);background:var(--papel);padding:2px 8px}
 .animando .fig-c{opacity:.2}
 #i5-eq .eq,#i5-balance-eq .eq,#i5-eta .eq{text-align:center;width:100%;display:block}
+
+/* --- Central de vapor (divisoria del bloque de integración) --- */
+#i6-div .fg{left:520px;top:210px;width:700px}
+#i6-div .fg svg{display:block;width:700px;height:auto}
+.humo-c{fill:#D9D8CE;stroke:var(--grafito);stroke-width:2.4}
+.vap-c{fill:#EFEFE8;stroke:var(--grafito);stroke-width:2.4}
+.fum{animation:fum 5.4s linear infinite;animation-delay:var(--dl,0s);opacity:0;transform-box:fill-box;transform-origin:center}
+@keyframes fum{0%{transform:translate(0,0) scale(.5);opacity:0}15%{opacity:.9}100%{transform:translate(18px,-130px) scale(2.1);opacity:0}}

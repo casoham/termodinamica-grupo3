@@ -2,7 +2,33 @@
 <section id="i6-div" class="div">
 <p class="k">§ ∑ · Del ideal a lo real</p>
 <div class="num s ent" style="--i:0">∑</div>
-<div class="fg"><svg class="refri dibuja" viewBox="0 0 300 520" width="400" height="693"><use href="#refri-cerrada"/></svg></div>
+<div class="fg"><svg class="planta" viewBox="0 0 700 560" width="700" height="560" role="img" aria-label="Central de vapor: caldera con chimenea, sala de turbina y torre de enfriamiento">
+  <line class="lin tr" x1="0" y1="500" x2="700" y2="500" pathLength="1"/>
+  <!-- caldera y chimenea -->
+  <rect class="rel tr" x="40" y="320" width="170" height="180" pathLength="1"/>
+  <path class="lin tr" d="M40 380 H210 M40 440 H210 M95 320 V500 M150 320 V500" pathLength="1" style="stroke-width:2.4"/>
+  <path class="rel tr" d="M138 320 L146 110 H186 L194 320" pathLength="1"/>
+  <path class="lin tr" d="M138 110 H194 M140 150 H190" pathLength="1" style="stroke-width:2.4"/>
+  <g class="fum" style="--dl:0s"><circle cx="166" cy="96" r="22" class="humo-c"/></g>
+  <g class="fum" style="--dl:-1.7s"><circle cx="166" cy="96" r="22" class="humo-c"/></g>
+  <g class="fum" style="--dl:-3.4s"><circle cx="166" cy="96" r="22" class="humo-c"/></g>
+  <!-- tubería de vapor (calor) -->
+  <path class="flecha s-rojo tr" d="M210 410 H262" pathLength="1" style="stroke-width:9"/>
+  <!-- sala de turbina -->
+  <path class="rel tr" d="M262 500 V350 L346 300 L430 350 V500" pathLength="1"/>
+  <circle class="rel tr" cx="318" cy="440" r="42" pathLength="1"/>
+  <g class="turb" style="transform-origin:318px 440px"><path class="lin" d="M318 402 V478 M280 440 H356 M291 413 L345 467 M345 413 L291 467" style="stroke-width:3"/></g>
+  <rect class="rel tr" x="372" y="414" width="46" height="52" rx="4" pathLength="1"/>
+  <path class="flecha s-ocre tr" d="M360 440 H372" pathLength="1" style="stroke-width:6"/>
+  <!-- tubería de retorno (frío) -->
+  <path class="flecha s-azul tr" d="M430 470 H470" pathLength="1" style="stroke-width:9"/>
+  <!-- torre de enfriamiento -->
+  <path class="rel tr" d="M470 500 C500 430 520 360 520 310 C520 250 506 200 500 150 H640 C634 200 620 250 620 310 C620 360 640 430 670 500" pathLength="1"/>
+  <path class="lin tr" d="M508 200 H632 M516 250 H624 M520 320 H620 M510 400 H630" pathLength="1" style="stroke-width:2.2"/>
+  <g class="fum" style="--dl:-.4s"><circle cx="570" cy="130" r="30" class="vap-c"/></g>
+  <g class="fum" style="--dl:-2.1s"><circle cx="570" cy="130" r="30" class="vap-c"/></g>
+  <g class="fum" style="--dl:-3.8s"><circle cx="570" cy="130" r="30" class="vap-c"/></g>
+</svg></div>
 <div class="txt ent" style="--i:2"><h2>Del ideal a lo real</h2></div>
 <aside>Divisoria de sección.</aside>
 </section>
@@ -55,7 +81,7 @@
 <aside>Truco: el rectángulo ocre es lo que ganas; el azul es lo que pagas sí o sí.</aside>
 </section>
 
-<section id="i6-villanos" data-pasos="4">
+<section id="i6-villanos" data-pasos="3">
 <p class="k">§ ∑ · Dinámica</p>
 <h2 class="t">Los 3 villanos de la entropía</h2>
 <div class="c" style="margin-top:14px">
@@ -73,7 +99,6 @@
       <h3>Expansión sin resistencia</h3><p>El gas se expande sin empujar nada: cero trabajo.</p><span class="acc">La soda del inicio: psst</span>
     </div>
   </div>
-  <p class="rem" data-p="4"><span class="eq" style="font-size:64px"><math><msub><mi>S</mi><mtext>gen</mtext></msub><mo>&gt;</mo><mn>0</mn><mo>→</mo><msub><mi>η</mi><mtext>real</mtext></msub><mo>&lt;</mo><msub><mi>η</mi><mtext>Carnot</mtext></msub></math></span><br><span class="cuerpo" style="font-size:34px;color:var(--grafito)">Los tres generan entropía.</span></p>
 </div>
 <aside>Dinámica con el público: froten las manos 10 s; pásense un cubo de hielo; y la soda del inicio. Revelar los villanos de uno en uno.</aside>
 </section>
@@ -97,21 +122,6 @@
   </div>
 </div>
 <aside>Pregunta al público: ¿cuánto rinde la central real? Un clic para la barra ideal, otro para la real.</aside>
-</section>
-
-<section id="i6-refri" data-pasos="1">
-<p class="k">§ ∑ · Pregunta</p>
-<h2 class="t">Tu refri: Carnot pero al revés</h2>
-<div class="c" style="margin-top:14px">
-  <p class="preg2" style="font-size:54px">¿Un refri puede sacar <em class="rojo">más</em> calor que la electricidad que consume?</p>
-  <div class="cops">
-    <div class="cop"><span class="n">13</span><span class="et">COP de Carnot: interior a 4 °C, cocina a 25 °C</span></div>
-    <div class="cop"><span class="n graf">2–3</span><span class="et">COP de un refri doméstico real</span></div>
-    <div class="cop-f"><div class="eq" style="font-size:54px"><math><msub><mtext>COP</mtext><mi>R</mi></msub><mo>=</mo><mfrac><msub><mi>T</mi><mi>f</mi></msub><mrow><msub><mi>T</mi><mi>c</mi></msub><mo>−</mo><msub><mi>T</mi><mi>f</mi></msub></mrow></mfrac></math></div><div class="eq" style="font-size:44px;margin-top:10px"><math><mfrac><mn>277</mn><mrow><mn>298</mn><mo>−</mo><mn>277</mn></mrow></mfrac><mo>≈</mo><mn>13</mn></math></div></div>
-  </div>
-  <p class="resp" data-p="1" style="font-size:44px;margin-top:20px">Sí: mueve calor, no lo fabrica. Por eso el COP puede pasar de 1.</p>
-</div>
-<aside>Votación a mano alzada: ¿sí o no? Un clic revela la respuesta.</aside>
 </section>
 
 <section id="i6-tabla" data-pasos="4">
